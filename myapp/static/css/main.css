@@ -1,0 +1,134 @@
+.header {
+  color: #FFA57A;
+  font-size: 2.8em;
+  margin-bottom: 5px; }
+
+.container {
+  width: 300px;
+  padding: 50px;
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-family: "Titillium Web", sans-serif;
+  border-radius: 5px;
+  background-color: #7F7D7B;
+  position: relative; }
+
+.listItem {
+  padding-left: 30px;
+  background-color: white;
+  position: relative; }
+
+.action {
+  float: right;
+    margin: 5px;
+    color: #7F7D7B;
+}
+
+.finish {
+      color: #7F7D7B;
+}
+.finish::before {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f046";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B;
+}
+.priority-high::before {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f240";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B;
+}
+.priority-mid::before {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f242";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B;
+}
+.priority-low::before {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f243";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B;
+}
+
+
+/*.listItem::before {*/
+  /*position: absolute;*/
+  /*font-family: FontAwesome;*/
+  /*content: "\f240";*/
+  /*left: 7px;*/
+  /*margin-top: 3px;*/
+  /*color: #7F7D7B; }*/
+
+.complete {
+  text-decoration: line-through;
+  position: relative; }
+
+.complete::before {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f000";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B; }
+
+#tasks {
+  list-style: none;
+  padding-left: 0; }
+  #tasks li {
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 30px; }
+
+#addTask {
+  width: 300px; }
+
+input {
+  width: 300px;
+  height: 40px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 5px; }
+
+button {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: #FFA57A;
+  margin-top: 10px; }
+
+button:focus {
+  outline: none; }
+
+.count {
+  width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  font-family: "Titillium Web", sans-serif;
+  background-color: #FFA57A;
+  border-radius: 5px;
+  margin-top: 5px;
+  position: relative;
+  padding-left: 40px;
+  padding-top: 15px;
+  margin-bottom: 50px; }
+
+.count::before {
+  font-family: FontAwesome;
+  position: absolute;
+  content: "\f0ad";
+  left: 7px;
+  margin-top: 3px;
+  color: #7F7D7B;
+  font-size: 1.5em; }

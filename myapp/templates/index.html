@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>to do list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/font.css">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="header">待办列表</div>
+
+    <form id="addTask" action="/todo/add/" method="post">
+        {%   csrf_token %}
+        <input type="text" id="taskText" name="content" placeholder="todo" autofocus="autofocus"/>
+        <button type="submit">添加</button>
+    </form>
+
+    <ul id="tasks" class="tasks">
+        {% for todo in todos %}
+            <li class="listItem">{{ todo.content }}
+                <a href="/todo/{{ todo.id }}/delete/" title="delete"><i class="fa fa-trash action"></i></a>
+                <a href="/todo/{{ todo.id }}/finish/" title="finish"><i class="fa fa-check action"></i></a>
+            </li>
+        {% endfor %}
+        {% for ftodo in finishtodos %}
+            <li class="listItem finish"><s>{{ ftodo.content }}</s>
+                <a href="/todo/{{ ftodo.id }}/delete/" title="delete"><i class="fa fa-trash action"></i></a>
+                <a href="/todo/{{ ftodo.id }}/unfinish/" title="unfinish"><i class="fa fa-undo action"></i></a>
+            </li>
+        {% endfor %}
+    </ul>
+    {##}
+    {#  <button id="removeCompleted">remove completed items</button>#}
+    {#  <button id="clearAll">clear all</button>#}
+</div>
+<div class="count">待办总数: <span class="number">{{ todo_count }}</span></div>
+</body>
+</html>
